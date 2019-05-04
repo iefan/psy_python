@@ -1,7 +1,53 @@
 from random import randint
 import winsound
+import time
 
 def kousuandashi():
+    print("="*30)
+    print("100以内加减法听算小程序：1.0版")
+    print("="*30)
+    try:
+        numpro = eval(input("\n请输入您要练习的听算题目数量(默认为 3 道)："))
+    except:
+        numpro = 3
+    try:
+        numtimes = eval(input("\n请输入您每道题目要听的次数(默认为 2 次)："))
+    except:
+        numtimes = 2
+    print("\n\n下面听算开始，一共  {}  道题，请注意听题：\n".format(numpro))
+    lst_pro = []
+    for i in range(numpro):
+        print("第{}题，请听题。".format(i+1))
+        x=randint(0,99)
+        y=randint(0,99)
+        fuhao=randint(0,1) #0代表加法，1代表减法
+        if fuhao==0:
+            for _ in range(numtimes):
+                dubiaodashi([x, "JIA", y, "DENGYU"])
+                time.sleep(1)
+            lst_pro.append("{}+{}".format(x,y))            
+        else:
+            if x>y:
+                for _ in range(numtimes):
+                    dubiaodashi([x, "JIAN", y, "DENGYU"])
+                    time.sleep(1)
+                lst_pro.append("{}-{}".format(x,y))  
+            else:
+                for _ in range(numtimes):
+                    dubiaodashi([y, "JIAN", x, "DENGYU"])
+                    time.sleep(1)
+                lst_pro.append("{}-{}".format(y,x))  
+        time.sleep(2)
+
+    input("\n\n回车显示正确答案：")
+    print("\n正确答案：\n")
+    indx = 0
+    for item in lst_pro:
+        indx += 1
+        print("第{}题：{}={}".format(indx, item, eval(item)))
+    input("\n\n按任意键退出......")
+
+def kousuandashi3():
     print("100以内加减法听算小程序：1.0版")
     print("="*20)
     numpro = eval(input("请输入您要练习的听算题目数量："))
