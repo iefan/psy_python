@@ -1,0 +1,143 @@
+from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib_venn import venn3, venn3_circles, venn2, venn2_circles
+
+def A_Jiao_B():
+    plt.figure(figsize=(4,4))
+    v = venn2(subsets=(1, 1, 1), set_labels = ('A', 'B'))
+    v.get_patch_by_id('11').set_alpha(0.2)
+    v.get_patch_by_id('11').set_color('black')
+    v.get_patch_by_id('10').set_color('white')
+    v.get_patch_by_id('01').set_color('white')
+    v.get_label_by_id('01').set_text('')
+    v.get_label_by_id('11').set_text('A∩B')
+    v.get_label_by_id('10').set_text('')
+    v.get_label_by_id('A').set_text('A')
+    v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 1, 1), color='green')
+    # c = venn2_circles(subsets=(1, 1, 1), linestyle='dashed')
+    # c[0].set_lw(1.0)
+    # c[1].set_ls('dotted')
+    plt.title("A∩B")
+    # plt.annotate('Unknown set', xy=v.get_label_by_id('100').get_position() - np.array([0, 0.05]), xytext=(-70,-70),
+    #              ha='center', textcoords='offset points', bbox=dict(boxstyle='round,pad=0.5', fc='gray', alpha=0.1),
+    #              arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0.5',color='gray'))
+    plt.show()
+
+def A_Bing_B():
+    plt.figure(figsize=(4,4))
+    v = venn2(subsets=(1, 1, 1), set_labels = ('A', 'B'))
+    v.get_patch_by_id('11').set_alpha(0.2)
+    v.get_patch_by_id('10').set_alpha(0.2)
+    v.get_patch_by_id('01').set_alpha(0.2)
+    v.get_patch_by_id('11').set_color('black')
+    v.get_patch_by_id('10').set_color('black')
+    v.get_patch_by_id('01').set_color('black')
+    v.get_label_by_id('01').set_text('')
+    v.get_label_by_id('11').set_text('')
+    v.get_label_by_id('10').set_text('')
+    v.get_label_by_id('A').set_text('A')
+    v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 1, 1), color='green')
+    # c = venn2_circles(subsets=(1, 1, 1), linestyle='dashed')
+    # c[0].set_lw(1.0)
+    # c[1].set_ls('dotted')
+    plt.title("A∪B")
+    # plt.annotate('Unknown set', xy=v.get_label_by_id('100').get_position() - np.array([0, 0.05]), xytext=(-70,-70),
+    #              ha='center', textcoords='offset points', bbox=dict(boxstyle='round,pad=0.5', fc='gray', alpha=0.1),
+    #              arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0.5',color='gray'))
+    plt.show()
+
+
+def A_Fei():
+    fig = plt.figure(figsize=(4,4))
+    fig.patch.set_facecolor('gray')
+    v = venn2(subsets=(1, 0, 0), set_labels = ('A', ''))
+    # v.get_patch_by_id('11').set_alpha(0.2)
+    v.get_patch_by_id('10').set_alpha(1)
+    # v.get_patch_by_id('01').set_alpha(0.2)
+    # v.get_patch_by_id('11').set_color('black')
+    v.get_patch_by_id('10').set_color('white')
+    # v.get_patch_by_id('01').set_color('black')
+    v.get_label_by_id('01').set_text('')
+    # v.get_label_by_id('11').set_text('')
+    v.get_label_by_id('10').set_text('A')
+    v.get_label_by_id('A').set_text('')
+    # v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 0, 0), color='green')
+    # c = venn2_circles(subsets=(1, 1, 1), linestyle='dashed')
+    # c[0].set_lw(1.0)
+    # c[1].set_ls('dotted')
+    plt.title("¬A")
+    # plt.annotate('Unknown set', xy=v.get_label_by_id('100').get_position() - np.array([0, 0.05]), xytext=(-70,-70),
+    #              ha='center', textcoords='offset points', bbox=dict(boxstyle='round,pad=0.5', fc='gray', alpha=0.1),
+    #              arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0.5',color='gray'))
+    plt.show()
+
+
+def A_Dengyu_B():
+    fig = plt.figure(figsize=(4,4))
+    fig.patch.set_facecolor('gray')
+    v = venn2(subsets=(1, 1, 1), set_labels = ('A', 'B'))
+    # v.get_patch_by_id('11').set_alpha(0.2)
+    v.get_patch_by_id('10').set_alpha(1)
+    v.get_patch_by_id('01').set_alpha(1)
+    v.get_patch_by_id('11').set_color('gray')
+    v.get_patch_by_id('10').set_color('white')
+    v.get_patch_by_id('01').set_color('white')
+    v.get_label_by_id('01').set_text('')
+    v.get_label_by_id('11').set_text('')
+    v.get_label_by_id('10').set_text('')
+    v.get_label_by_id('A').set_text('A')
+    v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 1, 1), color='green')
+    plt.title("A=B")
+    plt.show()
+
+
+def A_Yihuo_B():
+    plt.figure(figsize=(4,4))
+    v = venn2(subsets=(1, 1, 1), set_labels = ('A', 'B'))
+    v.get_patch_by_id('11').set_alpha(1)
+    v.get_patch_by_id('10').set_alpha(0.2)
+    v.get_patch_by_id('01').set_alpha(0.2)
+    v.get_patch_by_id('11').set_color('white')
+    v.get_patch_by_id('10').set_color('black')
+    v.get_patch_by_id('01').set_color('black')
+    v.get_label_by_id('01').set_text('')
+    v.get_label_by_id('11').set_text('')
+    v.get_label_by_id('10').set_text('')
+    v.get_label_by_id('A').set_text('A')
+    v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 1, 1), color='green')
+    plt.title("A⊕B")
+    plt.show()
+
+def A_Yunhan_B():
+    fig = plt.figure(figsize=(4,5))
+    fig.patch.set_facecolor('gray')
+    
+    v = venn2(subsets=(1, 1, 1), set_labels = ('A', 'B'))
+    # v.get_patch_by_id('11').set_alpha(0.2)
+    v.get_patch_by_id('10').set_alpha(1)
+    # v.get_patch_by_id('01').set_alpha(1)
+    v.get_patch_by_id('11').set_color('gray')
+    v.get_patch_by_id('10').set_color('white')
+    v.get_patch_by_id('01').set_color('gray')
+    v.get_label_by_id('01').set_text('')
+    v.get_label_by_id('11').set_text('')
+    v.get_label_by_id('10').set_text('')
+    v.get_label_by_id('A').set_text('A')
+    v.get_label_by_id('B').set_text('B')
+    c = venn2_circles(subsets=(1, 1, 1), color='green')
+    plt.title("A⇒B")
+    # plt.text(0,-1,'a')
+    plt.show()
+
+if __name__ == "__main__":
+    A_Yunhan_B()
+    # A_Dengyu_B()
+    # A_Yihuo_B()
+    # A_Fei()
+    # A_Bing_B()
+    # A_Jiao_B()
