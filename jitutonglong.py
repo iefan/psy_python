@@ -15,6 +15,21 @@ def dayinxinghao1():
             print((i-j)*' ',end='')
             print(' *'*j)
 
+def  jitutonglong():
+    print('鸡兔同笼游戏现在开始！！！')
+    head = eval(input("请输入一共的头数："))
+    foot=eval(input("请输入一共的脚数："))
+    jitou=head-(foot-head*2)//2
+    tutou=(foot-head*2)//2
+    jijiao=jitou*2
+    tujiao=tutou*4
+##    if  jitou+tutou==head  and  jijiao+tujiao==foot  and  type(jitou)==type(2)  and  type(tutou)==type(2):
+    if  jitou+tutou==head  and  jijiao+tujiao==foot  :
+        print("鸡有{}只  ，  兔有{}只".format(int(jitou),int(tutou)))
+    else:
+        print("无解！！！")
+
 if __name__=="__main__":
-    dayinxinghao1()
+    # dayinxinghao1()
+    jitutonglong()
     # dayinxinghao()
